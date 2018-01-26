@@ -1,0 +1,43 @@
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Ticket List</div>
+
+  <!-- Table -->
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Subject</th>
+        <th>Description</th>
+        <th>Created At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ticket of tickets" [ngClass]="ticket.priority ==1 ? 'alert' : 'simple' ">
+        <td>{{ticket.id}}</td>
+        <td>{{ticket.subject}}</td>
+        <td>{{ticket.description}}</td>
+        <td>{{ticket.created_at}}</td>
+      </tr>
+
+      <!--<tr>
+        <td>1</td>
+        <td>ticket num 1</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
+        <td>12/1/2017</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ticket num 1</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
+        <td>12/1/2017</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>ticket num 1</td>
+        <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </td>
+        <td>12/1/2017</td>
+      </tr>-->
+    </tbody>
+  </table>
+</div>
