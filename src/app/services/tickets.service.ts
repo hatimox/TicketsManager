@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable , Output , EventEmitter} from '@angular/core';
 
 @Injectable()
 export class TicketsService {
+  
   tickets = [
     {
     id: 1,
@@ -32,10 +33,16 @@ export class TicketsService {
     priority: 3
   },
 ];
+  @Output() added:EventEmitter<number> = new EventEmitter ;
   constructor() { }
 
   getTicket() {
     return this.tickets;
+  }
+
+  addTicket(ticket){
+    this.tickets.push(ticket);
+    this.added.emit(this.tickets.length);
   }
 
 }

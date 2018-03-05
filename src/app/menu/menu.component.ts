@@ -1,3 +1,4 @@
+import { TicketsService } from './../services/tickets.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-
-  constructor() { }
+  count = 0;
+  constructor(private ticketService : TicketsService ) { }
 
   ngOnInit() {
+    this.ticketService.added.subscribe(count =>{
+      this.count = count;
+    })
   }
 
 }
